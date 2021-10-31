@@ -1,51 +1,53 @@
-import logo from './logo.svg';
-import { Link } from 'react-router-dom';
+function NavBar() {
 
-function NavBar(props) {
-    return(
-        <header className="p-3 bg-dark text-white">
-            <div className="container">
-                <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img width="64" src={logo} />
-                    </a>
-
-                    <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li>
-                            <Link 
-                                to={props.link1.path} 
-                                className="nav-link px-2 text-white">
-                                    {props.link1.label}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to={props.link2.path} 
-                                className="nav-link px-2 text-white">
-                                    {props.link2.label}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to={props.link3.path} 
-                                className="nav-link px-2 text-white">
-                                    {props.link3.label}
-                            </Link>
-                        </li>
-                    </ul>
-
-                    <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <input type="search" className="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
-                    </form>
-
-                    <div className="text-end">
-                        <button type="button" className="btn btn-outline-light me-2">Login</button>
-                        <Link to={props.signUp.path} type="button" className="btn btn-warning">{props.signUp.label}</Link>
+    return (
+        <div id="wrapper">
+            <header id="header-container" className="fullwidth">
+                <div id="header">
+                    <div className="container">
+                        {/* Left Side Content */}
+                        <div className="left-side">
+                            {/* logo */}
+                            <div id="logo">
+                                <a href="index.html"><img src="images/whitedoveslogo.png" alt=""/></a>
+                            </div>
+                            {/* Main Navigation */}
+                            <nav id="navigation">
+                                <ul id="responsive">
+                                    <li><a href="index.html" className="current">Home</a></li>
+                                    <li><a href="#">Find Freelancers</a></li>
+                                    <li><a href="#">Find Jobs</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                            <div className="clearfix"></div>
+                            </div>
+                        {/* Right Side Content */}
+                        <div className="right-side">
+                            {/* User Notifications */}
+                            <div className="header-widget">
+                                {/* Notifications */}
+                                <div className="header-notifications">
+                                    {/* Trigger */}
+                                    <div className="header-notifications-trigger">	
+                                        <a className="btn btn-primary" style={{"margin-top": "22px"}} href="#" role="button">Register</a>
+                                    </div>
+                                </div>
+                                {/* Messages */}
+                                <div className="header-notifications">
+                                    <div className="header-notifications-trigger">
+                                        <a className="btn btn-success" style={{"margin-top": "22px"}} href="#" role="button">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-    )
+            </header>
+        </div>
+    );
 }
 
 export default NavBar;
+
